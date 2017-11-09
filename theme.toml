@@ -5,7 +5,7 @@ description = "A simple and beautiful theme for Hugo."
 homepage = "//github.com/ympons/hugo-yaz"
 tags = ["blog", "disqus", "google analytics", "rss", "syntax highlighting"]
 features = ["disqus", "google analytics", "rss", "syntax highlighting", "blog", "sharing options"]
-min_version = 1.0
+min_version = 0.15
 
 [author]
   name = "ympons"

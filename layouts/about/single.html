@@ -1,0 +1,19 @@
+    {{ partial "head.html" . }}
+	<body>
+        <div class="Wrapper">
+            <div class="Container">
+                {{ partial "nav.html" . }}
+                <header class="Header">
+                    <h1>About</h1>
+                </header>    
+                <section class="Content">
+                    <article class="Post">
+                        {{ .Content }}
+                    </article>
+                </section>
+                {{ partial "footer.html" . }}
+            </div>
+        </div>
+        {{ partial "js.html" . }}
+    </body>
+</html>

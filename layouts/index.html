@@ -1,0 +1,44 @@
+	{{ partial "head.html" . }}
+	<body>
+        <div class="Wrapper">
+            <div class="Container">
+                {{ partial "nav.html" . }}
+                <div class="Header">
+                    <div class="Profile">
+                        <div class="Avatar">
+                            <a href='{{ .Site.BaseURL }}about'>
+                                <img class="2x" src="{{ .Site.BaseURL }}images/avatar.png" />
+                            </a>
+                        </div>
+                        <div class="Summary">
+                            <h1>{{ with .Site.Params.title }}{{ . }}{{ else }}Yaismel Miranda{{ end }}</h1>
+                            {{ with .Site.Params.twitter }}<a href="https://twitter.com/{{ . }}">@{{ . }}</a>{{ end }}
+                            <p>{{ .Site.Params.bio | markdownify }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="Content">
+                    <h3>Writing</h3>
+                    <ul class="Post-list">
+                        {{ range first 5 (where .Data.Pages "Section" "post") }}
+                            <li class="Post-item">
+                                <aside class="dates">{{ .Date.Format "02 Jan 2006" }}</aside><span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+                            </li>
+                        {{ end }}
+                    </ul>
+                    <h3>Projects & Contributions</h3>
+                    <ul class="Project-list">
+                        {{ range .Site.Params.projects }}
+                            <li class="Project-item">
+                                <a href="{{ .link }}">{{ .name }}:</a><span>{{ .description }}</span>
+                            </li>                                    
+                        {{ end}}
+                    </ul>
+                </section>
+                {{ partial "footer.html" . }}
+            </div>
+        </div>
+        {{ partial "js.html" . }}
+    </body>
+</html>

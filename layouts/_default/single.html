@@ -1,0 +1,35 @@
+    {{ partial "head.html" . }}
+    <body>
+        <div class="Wrapper">
+            <div class="Container">
+                {{ partial "nav.html" . }}
+
+                <header class="Header">
+                    <h1>{{ .Title }}</h1>
+                    <h2 class="headline">{{ .Date.Format "January 2, 2006" }}</h2>
+                </header>
+                <section class="Content">
+                    <article class="Post">
+                       {{ .Content }}
+                    </article>
+                    <footer class="Post-meta" class="clearfix">
+                        {{ with .Site.Params.twitter }}<a class="avatarlink" href="https://twitter.com/{{ . }}">{{ end }}
+                            <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.png">
+                            <div>
+                                <span class="dark">{{ .Site.Params.title }}</span>
+                                <span>{{ .Site.Params.aboutAuthor }}</span>
+                            </div>
+                        {{ with .Site.Params.twitter }}</a>{{ end }}
+                        <section id="sharing">
+                            {{ partial "share.html" . }}
+                        </section>
+                    </footer>
+                    {{ template "_internal/disqus.html" . }}
+                    
+                </section>
+                {{ partial "footer.html" . }}
+            </div>
+        </div>
+        {{ partial "js.html" . }}
+    </body>
+</html>

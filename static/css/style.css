@@ -1,0 +1,433 @@
+:root {
+    --ease: cubic-bezier(.82, 0, .12, 1);
+    --width: 800px;
+  
+    --tracking: 0.05rem;
+  
+    --dark: #000;
+    --blue: #33A9FF;
+    --light-gray: #fafafa;
+  
+    --bg: #fff;
+    --fg: #868E96;
+    --fg-dark: #212529;
+  
+    --selection-bg: var(--blue);
+    --selection-fg: white;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont,
+      "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    font-weight: 300;
+    background: var(--bg);
+    color: var(--fg-dark);
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ::selection {
+    background: var(--selection-bg);
+    color: var(--selection-fg);
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @font-face {
+    font-family: 'icons';
+      src: url('../fonts/icons.eot');
+      src: url('../fonts/icons.eot#iefix') format('embedded-opentype'),
+      url('../fonts/icons.woff') format('woff'),
+      url('../fonts/icons.ttf') format('truetype'),
+      url('../fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+  }
+  .icon-facebook:before { content: '\e802'; }
+  .icon-facebook-squared:before { content: '\e800'; }
+  .icon-twitter:before { content: '\e801'; }
+  .icon-twitter-1:before { content: '\e804'; }
+  .icon-facebook-circled:before { content: '\e805'; }
+  .icon-twitter-circled:before { content: '\e806'; }
+  .icon-facebook-rect:before { content: '\e803'; }
+
+
+  h1, h2, h3, h4 {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    color: var(--fg-dark);
+  }
+  
+  h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  p {
+    margin: 25px 0;
+    line-height: 1.6;
+    color: var(--fg-color-light);
+  }
+  
+  li strong,
+  p strong {
+    color: var(--fg-dark);
+    font-weight: 500;
+  }
+  
+  li a,
+  p a {
+    color: var(--fg-dark);
+    font-weight: 400;
+    padding-bottom: 3px;
+    border-bottom: 1px dotted #ddd;
+  }
+  
+  li a:hover,
+  p a:hover {
+    color: var(--blue);
+    border-bottom: none;
+  }
+  
+  p a:hover {
+    border-bottom-color: var(--color);
+  }
+  
+  ul {
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+    color: var(--fg-color-light);
+    line-height: 1.5em;
+    list-style-type: none;
+  }
+  
+  ul li strong {
+    color: var(--fg-color);
+    font-weight: 500;
+  }
+  
+  pre {
+    /* background: var(--light-gray); */
+    color: var(--dark);
+    /* padding: 30px; */
+    border-radius: 2px;
+    overflow-x: scroll;
+    font: "Source Code Pro", Menlo, monospace;
+    font-size: .8em;
+    line-height: 1.5em;
+  }
+  
+  li > code,
+  p > code {
+    border: 1px solid #DEE2E6;
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-family: inherit;
+  }
+  
+  details > summary {
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+  }
+  
+  details > p {
+    border-left: 3px solid var(--dark);
+    padding-left: 15px;
+  }
+  
+  .Wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Container {
+    width: var(--width);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Header {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Header h2.headline {
+    color: var(--fg);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .Nav {
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  .Nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .Nav ul li > a {
+    position: relative;
+    user-select: none;
+    font-weight: 400;
+    transition: color 200ms;
+    color: var(--fg);      
+  }
+
+  .Nav a {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking);
+    font-size: 14px;
+  }
+
+  .Content {
+    margin-bottom: 50px;
+  }
+  
+  .Content img {
+    max-width: 100%;
+  }
+  
+  .Content article.Post {
+    margin-top: 30px;
+  }
+
+  .Post h1,
+  .Post h2,
+  .Post h3,
+  .Post h4 {
+    font-weight: 500;
+  }
+
+  .Profile {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Profile .Avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #daeaef;
+  }
+  
+  .Profile .Summary h1 {
+    margin-bottom: 5px;
+  }
+
+  .Profile .Summary a {
+    color: var(--fg);
+  }
+  
+  .Profile .Summary a:hover {
+    color: var(--blue);
+  }
+
+  .Profile .Summary p {
+    margin: 15px 0;
+  }
+
+  .Project-list .Project-item,
+  .Post-list .Post-item {
+    list-style-type: none;
+  }
+  
+  .Project-list .Project-item > a {
+    margin-right: 5px;
+  }
+
+  .Post-list + h3 {
+    margin-top: 30px;
+  }
+
+  .Nav ul li > a:hover {
+    color: var(--fg-dark);
+  }
+  
+  .Nav ul li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    left: 0;
+    background-color: var(--fg-dark);
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: all 250ms var(--ease);
+  }
+  
+  .Nav ul li > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .Post-list .Post-item .dates {
+    color: #666;
+    margin-right: 20px;
+  }
+
+  .Post-meta {
+    display: flex;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.4;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    margin-top: 40px;
+    color:#444;
+    border-bottom: 1px solid #eee;
+  }
+
+  .Post-meta .avatarlink {
+    width: 60%;
+  }
+
+  .Post-meta div {
+    float: left;
+  }
+
+  .Post-meta div span.dark {
+    color: var(--fg-dark);
+  }
+
+  .Post-meta div span {
+    font-weight: 500;
+    display: block;
+    color: var(--fg);  
+  }
+
+  .Post-meta img.avatar {
+    height: 45px;
+    width: 45px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 3px;
+    margin-right: 20px;
+    border: 2px solid #daeaef;
+  }
+
+  #sharing {
+    width: 40%;
+    text-align: right;
+  }
+  
+  #sharing a {
+    font-size: 20px;
+    font-size: 23px;
+    margin-left: 1px;
+    margin-top: 4px;
+    color: #d4d4d4;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  #sharing a:hover {
+    opacity: 0.8;
+  }
+    
+  #sharing a.facebook {
+    background: #4361b3;
+  }
+  #sharing a.twitter {
+    background: #4fafed;
+  }
+  
+  #sharing a {
+    font-size: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-left: 2px;
+  }
+
+  @media (min-width: 480px) {
+    .Project-list .Project-item,    
+    .Post-list .Post-item {
+      margin-bottom: 10px;
+    }
+
+    .Post-list .Post-item {
+      display: flex;
+    }
+  }
+
+  .Social .symbol i {
+    font-size: 20px;
+    color: var(--fg);
+    margin-right: 10px;    
+  }
+
+  .Social .symbol i:hover {
+    color: var(--blue);
+  }
+
+  .Footer {
+    height: 100px;
+    text-align: center;
+  }
+  
+  .Footer .Copyright {
+    margin: 15px;
+    color: var(--fg);
+    font-size: 14px;    
+  }
+
+  @media screen and (max-width: 850px) {
+    html, body {
+      --width: 80%;
+      font-size: 14px;
+    }
+  
+    .Content {
+      width: 100%;
+    }
+  }

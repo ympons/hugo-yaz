@@ -1,0 +1,16 @@
+<nav class="Nav">
+	<ul>
+		<li>
+			<a href='{{ .Site.BaseURL }}'>{{ with .Site.Params.home }}{{ . }}{{ else }}Home{{ end }}</a>
+		</li>
+		<li>
+			<a href='{{ .Site.BaseURL }}about'>{{ with .Site.Params.about }}{{ . }}{{ else }}About{{ end }}</a>
+		</li>
+		<li>
+			<a href='{{ .Site.BaseURL }}post'>{{ with .Site.Params.writing }}{{ . }}{{ else }}Writing{{ end }}</a>
+		</li>
+		<li>
+			<a class="cta" href="{{ .Site.RSSLink }}"><i class="fa fa-rss" aria-hidden="true"></i></a>
+		</li>
+	</ul>
+</nav>

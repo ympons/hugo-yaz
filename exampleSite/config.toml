@@ -1,0 +1,63 @@
+# Site settings
+baseurl = "http://replace-this-with-your-domain.com/"
+languageCode = "en-us"
+title = "Hugo Yaz"
+theme = "hugo-yaz"
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+# Disable comments by leaving disqusShortname empty
+disqusShortname = "ympons"
+
+[params]
+	name = "Mr. Hugo"
+	description = "Describe your website"
+	bio = "Blogger - Programmer - Gopher"
+	# Enter optionally your twitter account
+	twitter = "Your Twitter account"
+	enableRSS = true
+
+	# The variables below are optionally too and can be used to
+	# translate or customize each string of the theme.
+
+	# Navigation links
+	home = ""
+	about = ""
+	subscribe = ""
+	# Pagination links
+	olderPosts = ""
+	newerPosts = ""
+	readMore = ""
+	copyright = ""
+	# Sharing options and author information in posts
+	aboutAuthor = "I'm an enthusiastic gopher."
+	tweet = ""
+	share = ""
+	# 404 page
+	title404 = ""
+	subtitle404 = ""
+
+	# Projects
+	projects = [
+		{
+			name = "expreso", 
+			link = "https://github.com/ympons/expreso",
+			description = "A boolean expression parser and evaluator in Elixir." 
+		},
+		{
+			name = "go-orientrest", 
+			link = "https://github.com/ympons/go-orientrest",
+			description = "Orientrest is a Go client library providing access to the OrientDB document/graph database via its REST API." 
+		},
+		{
+			name = "pq", 
+			link = "https://github.com/lib/pq",
+			description = "A pure Go postgres driver for Go's database/sql package." 
+		}
+	]
+
+# Add additional social link entries underneath
+[social]
+    twitter  = "https://www.twitter.com/"
+    facebook = "https://www.facebook.com/"
+    github   = "https://www.github.com/"
+    dribble  = "https://www.dribbble.com/"

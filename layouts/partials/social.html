@@ -1,0 +1,7 @@
+<div class="Social">
+    {{ range $key, $val := .Site.Social }}
+    <a class="symbol" href="{{$val}}">
+        <i class="fa fa-{{ $key }}" aria-hidden="true"></i>
+    </a>
+    {{ end }}
+</div>

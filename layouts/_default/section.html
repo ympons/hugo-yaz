@@ -1,0 +1,28 @@
+	{{ partial "head.html" . }}
+	<body>
+		<div class="Wrapper">
+			<div class="Container">
+				{{ partial "nav.html" . }}
+				<div class="Header">
+					<h1>Writing</h1>
+				</div>
+				<section class="Content">
+					<article class="Post">
+						{{ range .Data.Pages.GroupByDate "2006" }}
+							<h2>{{ .Key }}</h2>
+							<ul class="Post-list">
+								{{ range .Pages }}
+									<li class="Post-item">
+										<aside class="dates">{{ .Date.Format "02 Jan" }}</aside><span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+									</li>
+								{{ end }}
+							</ul>
+						{{ end }}
+					</article>
+				</section>
+				{{ partial "footer.html" . }}
+			</div>
+		</div>
+	{{ partial "js.html" . }}
+	</body>
+</html>

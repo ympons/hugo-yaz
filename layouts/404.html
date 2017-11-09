@@ -1,0 +1,26 @@
+{{ partial "head.html" . }}
+<body>
+    <div class="Wrapper">
+        <div class="Container">
+            {{ partial "nav.html" . }}
+            <div class="Header">
+                <h1>{{ with .Site.Params.title404 }}{{ . }}{{ else }}404 - Page not found{{ end }}</h1>
+                <h3>{{ with .Site.Params.subtitle404 }}{{ . }}{{ else }}The content you're looking for doesn't seem to exist.{{ end }}</h3>
+            </div>
+            <section class="Content">
+                <article class="Post">
+                    <ul class="Post-list">
+                        {{ range first 5 (where .Data.Pages "Section" "post") }}
+                            <li class="Post-item">
+                                <aside class="dates">{{ .Date.Format "02 Jan 2006" }}</aside><span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </article>
+            </section>
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+{{ partial "js.html" . }}
+</body>
+</html>

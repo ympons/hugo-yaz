@@ -1,0 +1,23 @@
+name = "yaz"
+license = "MIT"
+licenselink = "//github.com/ympons/hugo-yaz/blob/master/LICENSE"
+description = "A simple and beautiful theme for Hugo."
+homepage = "//github.com/ympons/hugo-yaz"
+tags = ["blog", "disqus", "google analytics", "rss", "syntax highlighting"]
+features = ["disqus", "google analytics", "rss", "syntax highlighting", "blog", "sharing options"]
+min_version = 1.0
+
+[author]
+  name = "ympons"
+  homepage = "//github.com/ympons"
+
+[[original]]
+  name = "Cactus"
+  homepage = "//themes.gohugo.io/cactus/"
+  repo = "//github.com/digitalcraftsman/hugo-cactus-theme"
+
+[[original]]
+  # Nice CSS3 transition
+  name = "Static authors"
+  homepage = "//github.com/apex/static"
+  repo = "//github.com/apex/static"

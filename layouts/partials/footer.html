@@ -6,7 +6,7 @@
     {{ with .Site.Params.copyright }}
         {{ . | markdownify }}
     {{ else }}
-        © {{.Now.Format "2006"}} {{ .Site.Params.title }}. Powered by <a href="https://gohugo.io">Hugo</a>.
+        © {{now.Format "2006"}} {{ .Site.Params.title }}. Powered by <a href="https://gohugo.io">Hugo</a>.
     {{ end }}
     </p>
 </footer>
